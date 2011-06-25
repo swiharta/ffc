@@ -1,0 +1,13 @@
+# comment
+*.pyc
+*.json
+*.db
+
+# settings.py
+
+site_media
+add_to_db
+tmp
+
+# JetBrains PyCharm
+.idea

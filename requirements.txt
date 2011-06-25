@@ -1,0 +1,11 @@
+docutils
+south
+django-admin-tools
+django-uni-form
+django-fiber
+django-mptt
+django-ajax-selects
+django-imagekit
+django-taggit
+django-extensions
+django-blog-zinnia
