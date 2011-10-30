@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/screen.css"/>
 
     <!--for Google Maps API-->
-{#    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />#}
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
 <body> <!--initializes the Google Map-->
 <div class="container">
@@ -38,11 +38,11 @@
 <div id="landscape"></div>
 <div id="footer">
     <div class="container">
-{#        <div id="location">#}
+        <div id="location">
             <p id="address">1709 Country Club Road<br />Fairmont, WV 26554<br />(304) 366-2321</p>
-{#            <span id="google-map-button" class="button">Map</span>#}
-{#            <span id="clear-landscape-button" class="button" style="display: none;">Hide</span>#}
-{#        </div>#}
+            <span id="google-map-button" class="button">Map</span>
+            <span id="clear-landscape-button" class="button" style="display: none;">Hide</span>
+        </div>
 {#        {% get_recent_entries 1 "zinnia/tags/recent_entries_excerpts.html" %}#}
 {#        {% get_recent_entries 1 "zinnia/entry_list.html" %}#}
     </div>
@@ -90,7 +90,6 @@ $(document).ready(function() {
 
    $('#clear-landscape-button').click(function() {
        $('#landscape > div').hide();
-       $('#landscape').css('background-color: #fff;'); // might be needed for when map gets hidden
        $(this).hide();
        $('#google-map-button').show();
    });
