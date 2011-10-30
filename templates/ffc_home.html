@@ -55,36 +55,41 @@
 
 $(document).ready(function() {
    $('#google-map-button').click(function() {
-       var myLatlng = new google.maps.LatLng(39.47489110, -80.18445790);
-       var clubCenter = new google.maps.LatLng(39.47539110, -80.18655790);
-       var myOptions = {
-         zoom: 14,
-         center: clubCenter,
-         mapTypeId: google.maps.MapTypeId.HYBRID
-       };
-       var map = new google.maps.Map(document.getElementById("landscape"), myOptions);
-//       var content = '<strong>A info window!</strong><br/>That is bound to a marker';
+       var empty = $('#landscape').is(':empty');
+       if (empty) {
+           var myLatlng = new google.maps.LatLng(39.47489110, -80.18445790);
+           var clubCenter = new google.maps.LatLng(39.47539110, -80.18655790);
+           var myOptions = {
+             zoom: 14,
+             center: clubCenter,
+             mapTypeId: google.maps.MapTypeId.HYBRID
+           };
+           var map = new google.maps.Map(document.getElementById("landscape"), myOptions);
+//           var content = '<strong>A info window!</strong><br/>That is bound to a marker';
 //
-//       var infowindow = new google.maps.InfoWindow({
-//         content: content
-//       });
+//           var infowindow = new google.maps.InfoWindow({
+//             content: content
+//           });
 
-       var image = '{{ STATIC_URL }}images/FFC-logo-48.png';
+           var image = '{{ STATIC_URL }}images/FFC-logo-48.png';
 
-       var marker = new google.maps.Marker({
-         map: map,
-         position: clubCenter,
-         draggable: true,
-         icon: image
-       });
+           var marker = new google.maps.Marker({
+             map: map,
+             position: clubCenter,
+             draggable: true,
+             icon: image
+           });
 
-//       infowindow.open(map, marker);
+//           infowindow.open(map, marker);
+       } else {
+           $('#landscape > div').show();
+       }
        $(this).hide();
        $('#clear-landscape-button').show();
    });
 
    $('#clear-landscape-button').click(function() {
-       $('#landscape').empty();
+       $('#landscape > div').hide();
        $(this).hide();
        $('#google-map-button').show();
    });
