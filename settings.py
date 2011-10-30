@@ -16,10 +16,10 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.sqlite3", # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': "dev.db",                       # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'ENGINE': "django.db.backends.postgresql_psycopg2", # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': "swihart_ffc",                       # Or path to database file if using sqlite3.
+        'USER': 'swihart_ffc',                      # Not used with sqlite3.
+        'PASSWORD': '3chick04',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -31,20 +31,21 @@ LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
+INTERNAL_IPS = ( # for debug_toolbar
+  "127.0.0.1",
+)
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
 USE_L10N = True
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "site_media", "media")
-
 MEDIA_URL = "/site_media/media/"
-
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
-
 STATIC_URL = "/site_media/static/"
 
 STATICFILES_FINDERS = (
@@ -57,10 +58,9 @@ STATICFILES_FINDERS = (
 ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 
 # Additional locations of static files
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
 	os.path.join(PROJECT_ROOT, "media"),
-	MEDIA_ROOT,
-)
+]
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'cjqi$jhooy&5$1y#pv7)cl_@8f8virco+_(bj+9sjq^hb^g($2'
@@ -78,10 +78,12 @@ MIDDLEWARE_CLASSES = (
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
+
+  'debug_toolbar.middleware.DebugToolbarMiddleware',
 	
-	'fiber.middleware.ObfuscateEmailAddressMiddleware',
-	'fiber.middleware.AdminPageMiddleware',
-	'fiber.middleware.PageFallbackMiddleware',
+#	'fiber.middleware.ObfuscateEmailAddressMiddleware',
+#	'fiber.middleware.AdminPageMiddleware',
+#	'fiber.middleware.PageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'ffc.urls'
@@ -100,7 +102,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
 	
 	"staticfiles.context_processors.static_url",
 	
-	'fiber.context_processors.page_info',
+#	'fiber.context_processors.page_info',
 	
 	'zinnia.context_processors.version', # Optional
 	'zinnia.context_processors.media',
@@ -124,38 +126,28 @@ INSTALLED_APPS = (
 	"imagekit",
 	"django_extensions",
 	"mptt",
-	"taggit",
+#	"taggit",
+  "tinymce",
 	#"taggit_autocomplete",
 	#"taggit_templatetags",
-	"fiber",
-	"piston", # may need to an __init__.py to site-packages/piston
+#	"fiber",
+#	"piston", # may need to an __init__.py to site-packages/piston
 	"staticfiles",
 	"compressor",
 	"admin_tools",
 	"uni_form",
 	"zinnia",
 	"tagging",
+  "debug_toolbar",
+
+  "gallery"
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
+DEBUG_TOOLBAR_CONFIG = {
+  "INTERCEPT_REDIRECTS": False,
 }
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

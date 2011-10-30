@@ -1,0 +1,176 @@
+@import base
+//@import blueprint
+@import compass/utilities/lists/bullets
+@import compass/utilities/lists/inline-list
+@import compass/utilities/links/hover-link
+@import compass/css3/border-radius
+
+//+blueprint
+
+// Global
+body
+  background: transparent url(../img/background.gif) repeat-x scroll left top
+  color: $font_color
+  //font-size: 10px
+
+ul, ol
+  margin: 0 1.5em 1.5em 0
+  padding-left: 3.333em
+a
+  +hover-link
+  color: $link_color
+
+.container
+  +container
+  //+susy-grid-background
+
+// Header
+#header
+  +full()
+  +alpha
+  padding: 3em 0
+  #logo
+    +prefix(1,12)
+    +columns(1.8,12)
+  h1
+    //font-family: 'Rochester'
+    font-size: 4em
+    font-weight: normal
+    margin-bottom: 0
+  #header_text
+    +prefix(1,12)
+    +columns(8,12)
+    +omega(12)
+
+#breadcrumbs
+  +columns(5,12)
+  +prefix(4)
+  +alpha(12)
+
+.top-navigation
+  +columns(3,12)
+  +omega(12)
+  img
+    border: 0
+  .link
+    padding-left: 1.5em
+  .sitemap
+    background: transparent url(../img/sitemap.png) no-repeat scroll left center
+  .feeds
+    background: transparent url(../img/rss.png) no-repeat scroll left center
+
+#body
+  +full()
+  +alpha
+  padding: 6em 0
+
+// Content
+#content
+  +columns(7,12)
+  +pad(0,1,12)
+  h1, h2, h3
+    margin-top: 0
+
+// Sidebar
+#sidebar
+  +columns(4,12)
+  +omega(12)
+  div
+    margin-bottom: 3em
+  div:first-child
+    h3
+      margin-top: 0
+  h3
+    +border-radius(10px)
+    background-color: $box_color
+    padding: 0.5em
+  p
+    padding-left: 1em
+  ul, ol
+    padding-left: 2.5em
+    list-style-image: url(../img/bullet.png)
+  li ul, li ol
+    margin: 0 1.5em 0 0
+  input
+    width: auto
+  .calendar
+    h3
+      margin-bottom: 0
+    .month-navigation
+      padding-bottom: 1.5em
+      .month-previous
+        float: left
+      .month-next
+        float: right
+  .tags
+    ul
+      +inline-list
+      +no-bullets
+      +tag-cloud(1.5em)
+
+// Calendar
+table.month
+  +calendar($link_color, $box_color, $box_font_color)
+  width: 100%
+  th, td
+    padding: 4px 5px
+
+// Pagination
+div.paginator
+  margin-bottom: 1.5em
+  span
+    margin-left: 0.3em
+    padding: 0 0.5em 0 0.5em
+    float: left
+    border: 1px solid $box_color
+    &.page, &.next, &.previous
+      &:hover
+        background-color: $link_color
+        a
+          color: white
+    &.current
+      border-color: $link_color
+      background-color: $link_color
+      color: white
+
+// Entry
+.hentry
+  +entry
+  .entry-header
+    //background-color: $box_color
+    .entry-info
+      font-style: italic
+  .entry-footer
+    margin-bottom: 6em
+    p
+      font-style: italic
+      strong
+        color: $box_font_color
+        font-style: normal
+
+.featured
+  .entry-header
+    //background-color: $link_color + $box_color
+
+// Discussions
+ol#comment-list, ol#pingback-list, ol#trackback-list
+  li
+    border: 1px solid $box_color
+    margin-bottom: 5px
+    padding-bottom: 1em
+    &.box2
+      border-color: $box_font_color
+      background-color: $box_color
+    &.post-author
+      color: $box_font_color
+    img
+      padding: 5px
+    .pingback-body, trackback-body
+      padding: 5px
+    .comment-author, .pingback-author, .trackback-author, 
+      font-size: 1.2em
+      font-weight: bold
+      color: #666
+
+#footer
+  +full()

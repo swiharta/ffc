@@ -3,11 +3,15 @@
 *.json
 *.db
 
-# settings.py
+#  settings.py
+local_settings.py
 
-site_media
-add_to_db
+site-packages
+site_media/media/*
+site_media/static/*
 tmp
+migrations
+.sass-cache
 
 # JetBrains PyCharm
 .idea
