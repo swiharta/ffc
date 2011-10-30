@@ -90,6 +90,7 @@ $(document).ready(function() {
 
    $('#clear-landscape-button').click(function() {
        $('#landscape > div').hide();
+       $('#landscape').css('background-color: #fff;'); // might be needed for when map gets hidden
        $(this).hide();
        $('#google-map-button').show();
    });

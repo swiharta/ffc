@@ -98,7 +98,7 @@ a {
 }
 /* line 49, ../sass/screen.sass */
 #header #logo a {
-  color: inherit;
+  color: #888888;
 }
 /* line 51, ../sass/screen.sass */
 #header #logo a:hover {
@@ -158,6 +158,10 @@ a {
 }
 /* line 95, ../sass/screen.sass */
 #footer #location {
+  clear: both;
+  margin-left: 2.41%;
+  margin-right: 2.41%;
+  margin-left: 2.41%;
   text-align: center;
   color: #333333;
   padding: 10px;
