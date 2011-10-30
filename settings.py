@@ -127,7 +127,7 @@ INSTALLED_APPS = (
 	"django_extensions",
 	"mptt",
 #	"taggit",
-  "tinymce",
+  #"tinymce",
 	#"taggit_autocomplete",
 	#"taggit_templatetags",
 #	"fiber",
