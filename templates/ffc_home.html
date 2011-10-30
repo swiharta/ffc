@@ -40,8 +40,8 @@
     <div class="container">
         <div id="location">
             <p id="address">1709 Country Club Road<br />Fairmont, WV 26554<br />(304) 366-2321</p>
-            <span id="google-map-button" class="button">Map</span>
-            <span id="clear-landscape-button" class="button" style="display: none;">Hide</span>
+            <span id="google-map-button" class="button">Show Map</span>
+            <span id="clear-landscape-button" class="button" style="display: none;">Hide Map</span>
         </div>
 {#        {% get_recent_entries 1 "zinnia/tags/recent_entries_excerpts.html" %}#}
 {#        {% get_recent_entries 1 "zinnia/entry_list.html" %}#}
@@ -60,7 +60,7 @@ $(document).ready(function() {
            var myLatlng = new google.maps.LatLng(39.47489110, -80.18445790);
            var clubCenter = new google.maps.LatLng(39.47539110, -80.18655790);
            var myOptions = {
-             zoom: 14,
+             zoom: 16,
              center: clubCenter,
              mapTypeId: google.maps.MapTypeId.HYBRID
            };
