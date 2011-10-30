@@ -41,6 +41,7 @@
         <div id="location">
             <p id="address">1709 Country Club Road<br />Fairmont, WV 26554<br />(304) 366-2321</p>
             <span id="google-map-button" class="button">Map</span>
+            <span id="clear-landscape-button" class="button" style="display: none;">Hide</span>
         </div>
 {#        {% get_recent_entries 1 "zinnia/tags/recent_entries_excerpts.html" %}#}
 {#        {% get_recent_entries 1 "zinnia/entry_list.html" %}#}
@@ -78,6 +79,14 @@ $(document).ready(function() {
        });
 
 //       infowindow.open(map, marker);
+       $(this).hide();
+       $('#clear-landscape-button').show();
+   });
+
+   $('#clear-landscape-button').click(function() {
+       $('#landscape').empty();
+       $(this).hide();
+       $('#google-map-button').show();
    });
 });
 </script>
