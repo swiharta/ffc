@@ -1,5 +1,5 @@
 /* Layout ------------------------------------------------------------------ */
-/* line 14, ../sass/screen.sass */
+/* line 21, ../sass/screen.sass */
 .container {
   *zoom: 1;
   margin: auto;
@@ -13,22 +13,74 @@
   clear: both;
 }
 
-/* line 18, ../sass/screen.sass */
+/* line 25, ../sass/screen.sass */
 body {
   border-top: #4a554a 10px solid;
 }
 
-/* line 21, ../sass/screen.sass */
+/* line 28, ../sass/screen.sass */
 p {
   font-family: Tahoma, serif;
 }
 
-/* line 24, ../sass/screen.sass */
+/* line 31, ../sass/screen.sass */
+a {
+  color: #4a554a;
+}
+
+/* line 34, ../sass/screen.sass */
 .clearme {
   clear: both;
 }
 
-/* line 27, ../sass/screen.sass */
+/* line 37, ../sass/screen.sass */
+.button {
+  font-size: 100%;
+  padding: 0.3em 1.5em;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -o-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -khtml-border-radius: 1em;
+  border-radius: 1em;
+  background-color: #888888;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #aeaeae), color-stop(70%, #888888));
+  background: -webkit-linear-gradient(#aeaeae, #888888 70%);
+  background: -moz-linear-gradient(#aeaeae, #888888 70%);
+  background: -o-linear-gradient(#aeaeae, #888888 70%);
+  background: -ms-linear-gradient(#aeaeae, #888888 70%);
+  background: linear-gradient(#aeaeae, #888888 70%);
+  -moz-box-shadow: #d5d5d5 0 1px 0 inset;
+  -webkit-box-shadow: #d5d5d5 0 1px 0 inset;
+  -o-box-shadow: #d5d5d5 0 1px 0 inset;
+  box-shadow: #d5d5d5 0 1px 0 inset;
+  border: 1px solid #7b7b7b;
+  color: white;
+  text-shadow: #6b6b6b 0 -1px 0;
+}
+/* line 10, ../../../../Ruby187/lib/ruby/gems/1.8/gems/sassy-buttons-0.0.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:hover {
+  background-color: #7b7b7b;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #a2a2a2), color-stop(75%, #7b7b7b));
+  background: -webkit-linear-gradient(#a2a2a2 3%, #7b7b7b 75%);
+  background: -moz-linear-gradient(#a2a2a2 3%, #7b7b7b 75%);
+  background: -o-linear-gradient(#a2a2a2 3%, #7b7b7b 75%);
+  background: -ms-linear-gradient(#a2a2a2 3%, #7b7b7b 75%);
+  background: linear-gradient(#a2a2a2 3%, #7b7b7b 75%);
+}
+/* line 13, ../../../../Ruby187/lib/ruby/gems/1.8/gems/sassy-buttons-0.0.6/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:active {
+  -moz-box-shadow: #747474 0 1px 2px inset;
+  -webkit-box-shadow: #747474 0 1px 2px inset;
+  -o-box-shadow: #747474 0 1px 2px inset;
+  box-shadow: #747474 0 1px 2px inset;
+}
+
+/* line 40, ../sass/screen.sass */
 #header {
   clear: both;
   margin-left: 2.41%;
@@ -36,7 +88,7 @@ p {
   margin-left: 2.41%;
   padding-bottom: 20px;
 }
-/* line 32, ../sass/screen.sass */
+/* line 45, ../sass/screen.sass */
 #header #logo {
   display: inline;
   float: left;
@@ -44,19 +96,27 @@ p {
   margin-right: 1.266%;
   text-align: center;
 }
-/* line 36, ../sass/screen.sass */
+/* line 49, ../sass/screen.sass */
+#header #logo a {
+  color: inherit;
+}
+/* line 51, ../sass/screen.sass */
+#header #logo a:hover {
+  text-decoration: none;
+}
+/* line 54, ../sass/screen.sass */
 #header #logo img#logo-img {
   width: 100px;
   margin: 30px 0;
 }
-/* line 40, ../sass/screen.sass */
+/* line 58, ../sass/screen.sass */
 #header #logo #ffc-title {
   color: #888888;
   font-size: 180%;
   font-weight: normal;
   letter-spacing: -1px;
 }
-/* line 47, ../sass/screen.sass */
+/* line 65, ../sass/screen.sass */
 #header #nav {
   display: inline;
   float: left;
@@ -68,22 +128,22 @@ p {
   #margin-left: -1em;
   text-align: right;
 }
-/* line 52, ../sass/screen.sass */
+/* line 70, ../sass/screen.sass */
 #header #nav ul#nav-menu {
   list-style: none;
   padding-top: 50px;
 }
-/* line 56, ../sass/screen.sass */
+/* line 74, ../sass/screen.sass */
 #header #nav ul#nav-menu li {
   font-size: 150%;
   font-weight: bold;
   letter-spacing: -1px;
   color: #d5d5d5;
-  display: inline-block;
+  display: inline;
   padding: 0 15px;
 }
 
-/* line 64, ../sass/screen.sass */
+/* line 82, ../sass/screen.sass */
 #landscape {
   width: 100%;
   background: transparent url(../images/ffc-landscape-render.jpg) center center no-repeat;
@@ -91,13 +151,13 @@ p {
   height: 350px;
 }
 
-/* line 70, ../sass/screen.sass */
+/* line 88, ../sass/screen.sass */
 #footer {
   width: 100%;
   padding: 20px 0;
 }
-/* line 77, ../sass/screen.sass */
-#footer #address {
+/* line 95, ../sass/screen.sass */
+#footer #location {
   text-align: center;
   color: #333333;
   padding: 10px;

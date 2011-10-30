@@ -1,0 +1,13 @@
+{% load i18n %}
+<div class="entry">
+  {% for entry in entries %}
+  <h3>
+    <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
+  </h3>
+  {{ entry.content|safe }}
+  {% empty %}
+  <h3>
+    {% trans "No entries yet." %}
+  </h3>
+  {% endfor %}
+</div>

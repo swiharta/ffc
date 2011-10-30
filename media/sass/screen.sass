@@ -4,10 +4,17 @@
 
 @import compass/css3/text-shadow
 @import compass/css3/gradient
+@import sassy-buttons
 $default-text-shadow-color: #aaaaaa
 $default-text-shadow-h-offset: -1px
 $default-text-shadow-v-offset: 1px
 $default-text-shadow-blur: 1px
+
+@mixin sassy-button-default-structure
+  display: inline-block
+  width: auto
+  height: auto
+  cursor: pointer
 
 /* Layout ------------------------------------------------------------------
 
@@ -21,8 +28,14 @@ body
 p
   font-family: Tahoma, serif
 
+a
+  color: $logo_green
+
 .clearme
   clear: both
+
+.button
+  +sassy-button("matte", 1em, 100%, $grey1)
 
 #header
   +full()
@@ -32,6 +45,11 @@ p
   #logo
     +columns(6,16)
     text-align: center
+
+    a
+      color: inherit
+    a:hover
+      text-decoration: none
 
     img#logo-img
       width: 100px
@@ -58,7 +76,7 @@ p
         font-weight: bold
         letter-spacing: -1px
         color: lighten($grey1, 30%)
-        display: inline-block
+        display: inline
         padding: 0 15px
 
 #landscape
@@ -74,7 +92,7 @@ p
   padding: 20px 0
   //height: 50px
 
-  #address
+  #location
     text-align: center
     //color: $light_font
     color: $font
