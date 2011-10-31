@@ -34,7 +34,7 @@ a
   clear: both
 
 .button
-  +sassy-button("matte", 1em, 100%, $grey1)
+  +sassy-button("matte", 1em, 100%, $grey)
 
 #header
   +full()
@@ -46,7 +46,7 @@ a
     text-align: center
 
     a
-      color: $grey1
+      color: $grey
     a:hover
       text-decoration: none
 
@@ -56,7 +56,7 @@ a
 
     #ffc-title
       //+single-text-shadow()
-      color: $grey1
+      color: $grey
       font-size: 180%
       font-weight: normal
       letter-spacing: -1px
@@ -74,7 +74,7 @@ a
         font-size: 150%
         font-weight: bold
         letter-spacing: -1px
-        color: lighten($grey1, 30%)
+        color: lighten($grey, 30%)
         display: inline
         padding: 0 15px
 
@@ -96,11 +96,11 @@ a
 //  overflow: auto
 
 #control
-  background: lighten($black, 10%)
-  //+linear-gradient(color-stops(lighten($grey1, 20%), $white 40%), bottom)
-  color: $light_font
+  background: lighten($black, 15%)
+  //+linear-gradient(color-stops(lighten($grey, 20%), $white 40%), bottom)
+  color: $white
   padding: 3px 10px 5px
-  border: 1px solid #ccc
+  border: 1px solid $light_grey
   border-top: none
   +border-bottom-radius(0.5em)
   +opacity(0.9)
