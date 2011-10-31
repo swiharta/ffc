@@ -153,7 +153,12 @@ a {
 
 /* line 98, ../sass/screen.sass */
 #control {
-  background: white;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #bbbbbb), color-stop(40%, #ffffff));
+  background-image: -webkit-linear-gradient(bottom, #bbbbbb, #ffffff 40%);
+  background-image: -moz-linear-gradient(bottom, #bbbbbb, #ffffff 40%);
+  background-image: -o-linear-gradient(bottom, #bbbbbb, #ffffff 40%);
+  background-image: -ms-linear-gradient(bottom, #bbbbbb, #ffffff 40%);
+  background-image: linear-gradient(bottom, #bbbbbb, #ffffff 40%);
   color: #333333;
   padding: 0px 10px 5px;
   border: 1px solid #cccccc;
@@ -173,18 +178,18 @@ a {
   box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
   display: none;
 }
-/* line 108, ../sass/screen.sass */
+/* line 109, ../sass/screen.sass */
 #control label {
   font-weight: normal;
   font-size: 90%;
 }
 
-/* line 112, ../sass/screen.sass */
+/* line 113, ../sass/screen.sass */
 #footer {
   width: 100%;
   padding: 20px 0;
 }
-/* line 119, ../sass/screen.sass */
+/* line 120, ../sass/screen.sass */
 #footer #location {
   clear: both;
   margin-left: 2.41%;
