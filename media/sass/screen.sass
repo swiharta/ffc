@@ -96,13 +96,14 @@ a
 //  overflow: auto
 
 #control
-  //background: $white
-  +linear-gradient(color-stops(lighten($grey1, 20%), $white 40%), bottom)
-  color: $font
-  padding: 0px 10px 5px
+  background: lighten($black, 10%)
+  //+linear-gradient(color-stops(lighten($grey1, 20%), $white 40%), bottom)
+  color: $light_font
+  padding: 3px 10px 5px
   border: 1px solid #ccc
   border-top: none
   +border-bottom-radius(0.5em)
+  +opacity(0.9)
   box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4)
   display: none
 
