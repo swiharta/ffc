@@ -155,28 +155,28 @@ a {
 #control {
   background: white;
   color: #333333;
-  padding: 0px 15px 5px;
+  padding: 0px 10px 5px;
   border: 1px solid #cccccc;
   border-top: none;
-  -moz-border-radius-bottomleft: 1em;
-  -webkit-border-bottom-left-radius: 1em;
-  -o-border-bottom-left-radius: 1em;
-  -ms-border-bottom-left-radius: 1em;
-  -khtml-border-bottom-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  -moz-border-radius-bottomright: 1em;
-  -webkit-border-bottom-right-radius: 1em;
-  -o-border-bottom-right-radius: 1em;
-  -ms-border-bottom-right-radius: 1em;
-  -khtml-border-bottom-right-radius: 1em;
-  border-bottom-right-radius: 1em;
+  -moz-border-radius-bottomleft: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  -o-border-bottom-left-radius: 0.5em;
+  -ms-border-bottom-left-radius: 0.5em;
+  -khtml-border-bottom-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em;
+  -o-border-bottom-right-radius: 0.5em;
+  -ms-border-bottom-right-radius: 0.5em;
+  -khtml-border-bottom-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
   box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
   display: none;
 }
 /* line 108, ../sass/screen.sass */
 #control label {
   font-weight: normal;
-  font-size: 100%;
+  font-size: 90%;
 }
 
 /* line 112, ../sass/screen.sass */
