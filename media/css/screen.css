@@ -1,5 +1,5 @@
 /* Layout ------------------------------------------------------------------ */
-/* line 21, ../sass/screen.sass */
+/* line 20, ../sass/screen.sass */
 .container {
   *zoom: 1;
   margin: auto;
@@ -13,27 +13,27 @@
   clear: both;
 }
 
-/* line 25, ../sass/screen.sass */
+/* line 24, ../sass/screen.sass */
 body {
   border-top: #4a554a 10px solid;
 }
 
-/* line 28, ../sass/screen.sass */
-p {
+/* line 27, ../sass/screen.sass */
+p, label {
   font-family: Tahoma, serif;
 }
 
-/* line 31, ../sass/screen.sass */
+/* line 30, ../sass/screen.sass */
 a {
   color: #4a554a;
 }
 
-/* line 34, ../sass/screen.sass */
+/* line 33, ../sass/screen.sass */
 .clearme {
   clear: both;
 }
 
-/* line 37, ../sass/screen.sass */
+/* line 36, ../sass/screen.sass */
 .button {
   font-size: 100%;
   padding: 0.3em 1.5em;
@@ -80,7 +80,7 @@ a {
   box-shadow: #747474 0 1px 2px inset;
 }
 
-/* line 40, ../sass/screen.sass */
+/* line 39, ../sass/screen.sass */
 #header {
   clear: both;
   margin-left: 2.41%;
@@ -88,7 +88,7 @@ a {
   margin-left: 2.41%;
   padding-bottom: 20px;
 }
-/* line 45, ../sass/screen.sass */
+/* line 44, ../sass/screen.sass */
 #header #logo {
   display: inline;
   float: left;
@@ -96,27 +96,27 @@ a {
   margin-right: 1.266%;
   text-align: center;
 }
-/* line 49, ../sass/screen.sass */
+/* line 48, ../sass/screen.sass */
 #header #logo a {
   color: #888888;
 }
-/* line 51, ../sass/screen.sass */
+/* line 50, ../sass/screen.sass */
 #header #logo a:hover {
   text-decoration: none;
 }
-/* line 54, ../sass/screen.sass */
+/* line 53, ../sass/screen.sass */
 #header #logo img#logo-img {
   width: 100px;
   margin: 30px 0;
 }
-/* line 58, ../sass/screen.sass */
+/* line 57, ../sass/screen.sass */
 #header #logo #ffc-title {
   color: #888888;
   font-size: 180%;
   font-weight: normal;
   letter-spacing: -1px;
 }
-/* line 65, ../sass/screen.sass */
+/* line 64, ../sass/screen.sass */
 #header #nav {
   display: inline;
   float: left;
@@ -128,12 +128,12 @@ a {
   #margin-left: -1em;
   text-align: right;
 }
-/* line 70, ../sass/screen.sass */
+/* line 69, ../sass/screen.sass */
 #header #nav ul#nav-menu {
   list-style: none;
   padding-top: 50px;
 }
-/* line 74, ../sass/screen.sass */
+/* line 73, ../sass/screen.sass */
 #header #nav ul#nav-menu li {
   font-size: 150%;
   font-weight: bold;
@@ -143,7 +143,7 @@ a {
   padding: 0 15px;
 }
 
-/* line 82, ../sass/screen.sass */
+/* line 81, ../sass/screen.sass */
 #landscape {
   width: 100%;
   background: transparent url(../images/ffc-landscape-render.jpg) center center no-repeat;
@@ -151,12 +151,40 @@ a {
   height: 350px;
 }
 
-/* line 88, ../sass/screen.sass */
+/* line 98, ../sass/screen.sass */
+#control {
+  background: white;
+  color: #333333;
+  padding: 0px 15px 5px;
+  border: 1px solid #cccccc;
+  border-top: none;
+  -moz-border-radius-bottomleft: 1em;
+  -webkit-border-bottom-left-radius: 1em;
+  -o-border-bottom-left-radius: 1em;
+  -ms-border-bottom-left-radius: 1em;
+  -khtml-border-bottom-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  -moz-border-radius-bottomright: 1em;
+  -webkit-border-bottom-right-radius: 1em;
+  -o-border-bottom-right-radius: 1em;
+  -ms-border-bottom-right-radius: 1em;
+  -khtml-border-bottom-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+  display: none;
+}
+/* line 108, ../sass/screen.sass */
+#control label {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+/* line 112, ../sass/screen.sass */
 #footer {
   width: 100%;
   padding: 20px 0;
 }
-/* line 95, ../sass/screen.sass */
+/* line 119, ../sass/screen.sass */
 #footer #location {
   clear: both;
   margin-left: 2.41%;

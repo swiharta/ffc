@@ -40,8 +40,17 @@
     <div class="container">
         <div id="location">
             <p id="address">1709 Country Club Road<br />Fairmont, WV 26554<br />(304) 366-2321</p>
-            <span id="google-map-button" class="button">Show Map</span>
+            <span id="map-button" class="button">Show Map</span>
+{#            <span id="directions-button" class="button">Get Directions</span>#}
             <span id="clear-landscape-button" class="button" style="display: none;">Hide Map</span>
+        </div>
+        <div id="control">
+            <form action="http://maps.google.com/maps" method="get" target="_blank">
+                <label for="start">Starting Address: </label>
+                <input type="text" id="start" name="saddr" />
+                <input type="hidden" name="daddr" value="1709 Country Club Road, Fairmont, WV" />
+                <input type="submit" value="Go" id="directions-submit" />
+            </form>
         </div>
 {#        {% get_recent_entries 1 "zinnia/tags/recent_entries_excerpts.html" %}#}
 {#        {% get_recent_entries 1 "zinnia/entry_list.html" %}#}
@@ -54,45 +63,117 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-   $('#google-map-button').click(function() {
-       var empty = $('#landscape').is(':empty');
-       if (empty) {
-           var myLatlng = new google.maps.LatLng(39.47489110, -80.18445790);
-           var clubCenter = new google.maps.LatLng(39.47539110, -80.18655790);
-           var myOptions = {
-             zoom: 16,
-             center: clubCenter,
-             mapTypeId: google.maps.MapTypeId.HYBRID
-           };
-           var map = new google.maps.Map(document.getElementById("landscape"), myOptions);
-//           var content = '<strong>A info window!</strong><br/>That is bound to a marker';
+    var directionDisplay;
+    var directionsService = new google.maps.DirectionsService();
+
+    $('#map-button').click(function() {
+        var map_canvas = $("#landscape");
+        var useragent = navigator.userAgent;
+        
+        if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+            map_canvas.css({width: '100%', height: '100%'});
+        }
+        var empty = $(map_canvas).is(':empty');
+
+        if (empty) {
+            var clubCenter = new google.maps.LatLng(39.47539110, -80.18655790);
+            var myOptions = {
+              zoom: 16,
+              center: clubCenter,
+              mapTypeId: google.maps.MapTypeId.HYBRID
+            };
+            var map = new google.maps.Map(map_canvas[0], myOptions);
+//            var content = '<strong>A info window!</strong><br/>That is bound to a marker';
 //
-//           var infowindow = new google.maps.InfoWindow({
-//             content: content
-//           });
+//            var infowindow = new google.maps.InfoWindow({
+//              content: content
+//            });
 
-           var image = '{{ STATIC_URL }}images/FFC-logo-48.png';
+            var image = '{{ STATIC_URL }}images/FFC-logo-48.png';
 
-           var marker = new google.maps.Marker({
-             map: map,
-             position: clubCenter,
-             draggable: true,
-             icon: image
-           });
+            var marker = new google.maps.Marker({
+              map: map,
+              position: clubCenter,
+              draggable: true,
+              icon: image
+            });
 
-//           infowindow.open(map, marker);
-       } else {
-           $('#landscape > div').show();
-       }
-       $(this).hide();
-       $('#clear-landscape-button').show();
-   });
+            var control = document.getElementById('control');
+            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(control);
+            $(control).delay(200).fadeIn(200);
 
-   $('#clear-landscape-button').click(function() {
-       $('#landscape > div').hide();
-       $(this).hide();
-       $('#google-map-button').show();
-   });
+//            infowindow.open(map, marker);
+        } else {
+            $('#landscape > div').show();
+        }
+        $(this).hide();
+        $('#clear-landscape-button').show();
+    });
+
+{#    $('#directions-button').click(function() {#}
+{#        var map_canvas = $("#landscape");#}
+{#//        $(map_canvas).html('<div id="directions-map"></div><div id="directions-panel"></div>');#}
+{#        var useragent = navigator.userAgent;#}
+{##}
+{#        if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {#}
+{#            map_canvas.css({width: '100%', height: '100%'});#}
+{#        }#}
+{#        var empty = $(map_canvas).is(':empty');#}
+{##}
+{#        if (empty) {#}
+{#            var clubCenter = new google.maps.LatLng(39.47539110, -80.18655790);#}
+{#            var myOptions = {#}
+{#              zoom: 16,#}
+{#              center: clubCenter,#}
+{#              mapTypeId: google.maps.MapTypeId.HYBRID#}
+{#            };#}
+{#            var map = new google.maps.Map(map_canvas[0], myOptions);#}
+{#            var image = '{{ STATIC_URL }}images/FFC-logo-48.png';#}
+{#            var marker = new google.maps.Marker({#}
+{#              map: map,#}
+{#              position: clubCenter,#}
+{#              draggable: true,#}
+{#              icon: image#}
+{#            });#}
+{##}
+{#//        directionsDisplay = new google.maps.DirectionsRenderer();#}
+{#//        var map = new google.maps.Map(document.getElementById('directions-map'), myOptions);#}
+{#//        directionsDisplay.setMap(map);#}
+{#//        directionsDisplay.setPanel(document.getElementById('directions-panel'));#}
+{##}
+{#//        var control = document.getElementById('control');#}
+{#//        control.style.display = 'block';#}
+{#//        map.controls[google.maps.ControlPosition.TOP].push(control);#}
+{#        } else {#}
+{#            $('#landscape > div').show();#}
+{#        }#}
+{#        $(this).hide();#}
+{#        $('#clear-landscape-button').show();#}
+{#    });#}
+
+//    $('#directions-submit').click(function() {
+//        var start = document.getElementById('start').value;
+//        var myLatlng = new google.maps.LatLng(39.47489110, -80.18445790);
+//        alert(start);
+//        var request = {
+//            origin: start,
+//            destination: myLatlng,
+//            travelMode: google.maps.DirectionsTravelMode.DRIVING
+//        };
+//        directionsService.route(request, function(response, status) {
+//            if (status == google.maps.DirectionsStatus.OK) {
+//                directionsDisplay.setDirections(response);
+//            }
+//        });
+//        return false;
+//    });
+
+    $('#clear-landscape-button').click(function() {
+        $('#landscape > div').hide();
+        $(this).hide();
+        $('#map-button').show();
+//        $('#directions-button').show();
+    });
 });
 </script>
 </html>
