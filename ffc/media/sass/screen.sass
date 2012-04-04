@@ -1,0 +1,136 @@
+// Imports -------------------------------------------------------------------
+
+@import base
+
+@import compass/css3
+@import sassy-buttons
+$default-text-shadow-color: #aaaaaa
+$default-text-shadow-h-offset: -1px
+$default-text-shadow-v-offset: 1px
+$default-text-shadow-blur: 1px
+
+@mixin sassy-button-default-structure
+  display: inline-block
+  width: auto
+  height: auto
+  cursor: pointer
+
+/* Layout ------------------------------------------------------------------
+
+.container
+  +container
+  //+susy-grid-background
+
+body
+  border-top: $logo_green 10px solid
+
+p, label
+  font-family: Tahoma, serif
+
+a
+  color: $logo_green
+
+.clearme
+  clear: both
+
+.button
+  +sassy-button("matte", 1em, 100%, $grey)
+
+#header
+  +full()
+  +alpha
+  padding-bottom: 20px
+
+  #logo
+    +columns(6,16)
+    text-align: center
+
+    a
+      color: $grey
+    a:hover
+      text-decoration: none
+
+    img#logo-img
+      width: 100px
+      margin: 30px 0
+
+    #ffc-title
+      //+single-text-shadow()
+      color: $grey
+      font-size: 180%
+      font-weight: normal
+      letter-spacing: -1px
+
+  #nav
+    +columns(10,16)
+    +omega(16)
+    text-align: right
+
+    ul#nav-menu
+      list-style: none
+      padding-top: 50px
+      
+      li
+        font-size: 150%
+        font-weight: bold
+        letter-spacing: -1px
+        color: lighten($grey, 30%)
+        display: inline
+        padding: 0 15px
+
+#landscape
+  width: 100%
+  background: transparent url(../images/ffc-landscape-render.jpg) center center no-repeat
+  //background: transparent url(../images/alex.jpg) center 70% no-repeat
+  background-size: 100%
+  height: 350px
+
+//#directions-map
+//  margin-right: 400px
+//  height: 100%
+//
+//#directions-panel
+//  height: 100%
+//  float: right
+//  width: 390px
+//  overflow: auto
+
+#control
+  background: lighten($black, 15%)
+  //+linear-gradient(color-stops(lighten($grey, 20%), $white 40%), bottom)
+  color: $white
+  padding: 3px 10px 5px
+  border: 1px solid $light_grey
+  border-top: none
+  +border-bottom-radius(0.5em)
+  +opacity(0.9)
+  box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4)
+  display: none
+
+  label, p
+    font-weight: normal
+    font-size: 90%
+  //p
+  //  margin-bottom: 0
+  //  cursor: pointer
+  //form
+  //  display: none
+
+#footer
+  //+linear-gradient(color-stops($black, $logo_green 40%), top)
+  //background-color: $logo_green
+  width: 100%
+  padding: 20px 0
+  //height: 50px
+
+  #location
+    +full()
+    +alpha
+    text-align: center
+    //color: $light_font
+    color: $font
+    padding: 10px
+    margin: 0
+    
+    #clear-landscape-button
+      display: none
