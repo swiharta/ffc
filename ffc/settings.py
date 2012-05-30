@@ -55,7 +55,7 @@ STATICFILES_FINDERS = (
 'compressor.finders.CompressorFinder',
 )
 
-#ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
+ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 
 # Additional locations of static files
 STATICFILES_DIRS = [
