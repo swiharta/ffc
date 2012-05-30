@@ -1,0 +1,10 @@
+<div id="landscape"></div>
+<div id="control">
+    {#            <p id="directions-preshow">Get directions</p>#}
+    <form action="http://maps.google.com/maps" method="get" target="_blank" id="directions-form">
+        <label for="start">Enter your starting address: </label>
+        <input type="text" id="start" name="saddr" />
+        <input type="hidden" name="daddr" value="1709 Country Club Road, Fairmont, WV" />
+        <input type="submit" value="Go" id="directions-submit" />
+    </form>
+</div>

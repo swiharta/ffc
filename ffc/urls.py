@@ -3,10 +3,13 @@ from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 from django.contrib import admin
 from django.views.generic.simple import direct_to_template, redirect_to
+from main.views import SplashView, GoogleMapView
 admin.autodiscover()
 
 urlpatterns = patterns('',
-  url(r'^$', direct_to_template, {'template': 'ffc_home.html'}, name="home"),
+  url(r'^$', SplashView.as_view(), name="home"),
+  url(r'^map/', GoogleMapView.as_view(), name="map"),
+#  url(r'^$', direct_to_template, {'template': 'ffc-home.html'}, name="home"),
   url(r"^robots\.txt$", direct_to_template, {
     "template": "robots.txt", 'mimetype': 'text/plain'}, ),
   (r'^favicon\.ico$', redirect_to, {
@@ -18,6 +21,7 @@ urlpatterns = patterns('',
 #	url(r'^api/v1/', include('fiber.api.urls')),
 #	url(r'^admin/fiber/', include('fiber.admin_urls')),
 #	url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', {'packages': ('fiber',),}),
+
 
   url(r'^', include('zinnia.urls.capabilities')),
   url(r'^search/', include('zinnia.urls.search')),

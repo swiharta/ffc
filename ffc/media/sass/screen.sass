@@ -35,6 +35,9 @@ a
 .clearme
   clear: both
 
+a.button:hover
+  text-decoration: none
+
 .button
   +sassy-button("matte", 1em, 100%, $grey)
 
@@ -80,16 +83,14 @@ a
         display: inline
         padding: 0 15px
 
-
-
 #splash
   //width: 100%
-  ////background: transparent url(../images/DSC00166-2.jpg) 50% 35% no-repeat // !!
-  ////background: transparent url(../images/DSC00157.jpg) 50% 50% no-repeat // pano !!
+  background: transparent url(../images/DSC00166-2.jpg) 50% 35% no-repeat // !!
+  //background: transparent url(../images/DSC00157.jpg) 50% 50% no-repeat // pano !!
   ////background: transparent url(../images/DSC00153.jpg) 50% 50% no-repeat // pano
   ////background: transparent url(../images/DSC00180.jpg) 50% 50% no-repeat // pano
   ////background: transparent url(../images/DSC00178.jpg) 50% 50% no-repeat // pano !!
-  //background: transparent url(../images/DSC00181.jpg) 50% 50% no-repeat // pano !!
+  ////background: transparent url(../images/DSC00181.jpg) 50% 50% no-repeat // pano !!
   ////background: transparent url(../images/DSC00235-2.jpg) 50% 55% no-repeat // !!
   ////background: transparent url(../images/DSC00212-2.jpg) 50% 10% no-repeat // !
   ////background: transparent url(../images/DSC00238-2.jpg) 50% 50% no-repeat // not great
@@ -136,9 +137,6 @@ a
         &#content
           display: inline-block
 
-#cross-slide
-  width: 100%
-  height: 400px
 //#directions-map
 //  margin-right: 400px
 //  height: 100%
@@ -185,6 +183,4 @@ a
     color: $font
     padding: 10px
     margin: 0
-    
-    #clear-landscape-button
-      display: none
+    padding-top: 3em

@@ -43,8 +43,8 @@ USE_I18N = False
 # calendars according to the current locale
 USE_L10N = True
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, "site_media", "media")
-MEDIA_URL = "/site_media/media/"
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "site_media")
+MEDIA_URL = "/site_media/media"
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
 STATIC_URL = "/site_media/static/"
 
@@ -55,7 +55,7 @@ STATICFILES_FINDERS = (
 'compressor.finders.CompressorFinder',
 )
 
-ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
+#ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 
 # Additional locations of static files
 STATICFILES_DIRS = [
@@ -105,10 +105,11 @@ TEMPLATE_CONTEXT_PROCESSORS = [
 #	'fiber.context_processors.page_info',
 	
 	'zinnia.context_processors.version', # Optional
-	'zinnia.context_processors.media',
 ]
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
+	'django.contrib.admin',
+	'django.contrib.admindocs',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
 	'django.contrib.comments', # for zinnia
@@ -116,8 +117,6 @@ INSTALLED_APPS = (
 	'django.contrib.sites',
 	'django.contrib.messages',
 	#'django.contrib.staticfiles',
-	'django.contrib.admin',
-	'django.contrib.admindocs',
 	
 	"docutils",
 
@@ -142,7 +141,8 @@ INSTALLED_APPS = (
 
   "gallery",
   "directory",
-)
+  "crossslide",
+]
 
 DEBUG_TOOLBAR_CONFIG = {
   "INTERCEPT_REDIRECTS": False,

@@ -33,6 +33,11 @@ a {
 }
 
 /* line 38, ../sass/screen.sass */
+a.button:hover {
+  text-decoration: none;
+}
+
+/* line 41, ../sass/screen.sass */
 .button {
   font-size: 100%;
   padding: 0.3em 1.5em;
@@ -76,7 +81,7 @@ a {
   box-shadow: #747474 0 1px 2px inset;
 }
 
-/* line 41, ../sass/screen.sass */
+/* line 44, ../sass/screen.sass */
 #header {
   clear: both;
   margin-left: 2.41%;
@@ -84,7 +89,7 @@ a {
   margin-left: 2.41%;
   padding-bottom: 20px;
 }
-/* line 46, ../sass/screen.sass */
+/* line 49, ../sass/screen.sass */
 #header #logo {
   display: inline;
   float: left;
@@ -92,27 +97,27 @@ a {
   margin-right: 1.266%;
   text-align: center;
 }
-/* line 50, ../sass/screen.sass */
+/* line 53, ../sass/screen.sass */
 #header #logo a {
   color: #888888;
 }
-/* line 52, ../sass/screen.sass */
+/* line 55, ../sass/screen.sass */
 #header #logo a:hover {
   text-decoration: none;
 }
-/* line 55, ../sass/screen.sass */
+/* line 58, ../sass/screen.sass */
 #header #logo img#logo-img {
   width: 100px;
   margin: 30px 0;
 }
-/* line 59, ../sass/screen.sass */
+/* line 62, ../sass/screen.sass */
 #header #logo #ffc-title {
   color: #888888;
   font-size: 180%;
   font-weight: normal;
   letter-spacing: -1px;
 }
-/* line 66, ../sass/screen.sass */
+/* line 69, ../sass/screen.sass */
 #header #nav {
   display: inline;
   float: left;
@@ -124,12 +129,12 @@ a {
   #margin-left: -1em;
   text-align: right;
 }
-/* line 71, ../sass/screen.sass */
+/* line 74, ../sass/screen.sass */
 #header #nav ul#nav-menu {
   list-style: none;
   padding-top: 50px;
 }
-/* line 75, ../sass/screen.sass */
+/* line 78, ../sass/screen.sass */
 #header #nav ul#nav-menu li {
   font-size: 150%;
   font-weight: bold;
@@ -139,35 +144,36 @@ a {
   padding: 0 15px;
 }
 
-/* line 85, ../sass/screen.sass */
+/* line 86, ../sass/screen.sass */
 #splash {
+  background: transparent url(../images/DSC00166-2.jpg) 50% 35% no-repeat;
   height: 350px;
   position: relative;
 }
-/* line 102, ../sass/screen.sass */
+/* line 103, ../sass/screen.sass */
 #splash #landscape {
   height: 350px;
   position: relative;
   overflow: hidden;
 }
-/* line 108, ../sass/screen.sass */
+/* line 109, ../sass/screen.sass */
 #splash #landscape img.landscape {
   width: 100%;
 }
-/* line 111, ../sass/screen.sass */
+/* line 112, ../sass/screen.sass */
 #splash .shim {
   position: absolute;
   bottom: 0px;
   width: 100%;
   margin: 0 auto;
 }
-/* line 116, ../sass/screen.sass */
+/* line 117, ../sass/screen.sass */
 #splash .container {
   position: relative;
   bottom: -3em;
   z-index: 100;
 }
-/* line 122, ../sass/screen.sass */
+/* line 123, ../sass/screen.sass */
 #splash .container #caption {
   display: inline;
   float: left;
@@ -180,7 +186,7 @@ a {
   padding-left: 6.329%;
   padding-right: 6.329%;
 }
-/* line 126, ../sass/screen.sass */
+/* line 127, ../sass/screen.sass */
 #splash .container #caption .caption-content {
   display: none;
   font-size: 125%;
@@ -198,23 +204,17 @@ a {
   border-radius: 0.5em;
   padding: 1em 0.5em 1em 1.5em;
 }
-/* line 133, ../sass/screen.sass */
+/* line 134, ../sass/screen.sass */
 #splash .container #caption p {
   margin: 0;
   display: none;
 }
-/* line 136, ../sass/screen.sass */
+/* line 137, ../sass/screen.sass */
 #splash .container #caption p#content {
   display: inline-block;
 }
 
-/* line 139, ../sass/screen.sass */
-#cross-slide {
-  width: 100%;
-  height: 400px;
-}
-
-/* line 152, ../sass/screen.sass */
+/* line 150, ../sass/screen.sass */
 #control {
   background: #262626;
   color: white;
@@ -236,18 +236,18 @@ a {
   box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
   display: none;
 }
-/* line 164, ../sass/screen.sass */
+/* line 162, ../sass/screen.sass */
 #control label, #control p {
   font-weight: normal;
   font-size: 90%;
 }
 
-/* line 173, ../sass/screen.sass */
+/* line 171, ../sass/screen.sass */
 #footer {
   width: 100%;
   padding: 20px 0;
 }
-/* line 180, ../sass/screen.sass */
+/* line 178, ../sass/screen.sass */
 #footer #location {
   clear: both;
   margin-left: 2.41%;
@@ -257,8 +257,5 @@ a {
   color: #333333;
   padding: 10px;
   margin: 0;
-}
-/* line 189, ../sass/screen.sass */
-#footer #location #clear-landscape-button {
-  display: none;
+  padding-top: 3em;
 }
