@@ -1,6 +1,7 @@
 // Imports -------------------------------------------------------------------
 
 @import base
+@import mixins
 
 @import compass/css3
 @import sassy-buttons
@@ -15,14 +16,15 @@ $default-text-shadow-blur: 1px
   height: auto
   cursor: pointer
 
-/* Layout ------------------------------------------------------------------
+// Layout ------------------------------------------------------------------
+
+body
+  border-top: $logo_green 10px solid
+  min-width: 850px
 
 .container
   +container
   //+susy-grid-background
-
-body
-  border-top: $logo_green 10px solid
 
 p, label
   font-family: Tahoma, serif
@@ -78,13 +80,59 @@ a
         display: inline
         padding: 0 15px
 
-#landscape
-  width: 100%
-  background: transparent url(../images/ffc-landscape-render.jpg) center center no-repeat
-  //background: transparent url(../images/alex.jpg) center 70% no-repeat
-  background-size: 100%
-  height: 350px
 
+
+#splash
+  //width: 100%
+  ////background: transparent url(../images/DSC00166-2.jpg) 50% 35% no-repeat // !!
+  ////background: transparent url(../images/DSC00157.jpg) 50% 50% no-repeat // pano !!
+  ////background: transparent url(../images/DSC00153.jpg) 50% 50% no-repeat // pano
+  ////background: transparent url(../images/DSC00180.jpg) 50% 50% no-repeat // pano
+  ////background: transparent url(../images/DSC00178.jpg) 50% 50% no-repeat // pano !!
+  //background: transparent url(../images/DSC00181.jpg) 50% 50% no-repeat // pano !!
+  ////background: transparent url(../images/DSC00235-2.jpg) 50% 55% no-repeat // !!
+  ////background: transparent url(../images/DSC00212-2.jpg) 50% 10% no-repeat // !
+  ////background: transparent url(../images/DSC00238-2.jpg) 50% 50% no-repeat // not great
+  ////background: transparent url(../images/ffc-landscape-render.jpg) center center no-repeat
+  ////background: transparent url(../images/alex.jpg) center 70% no-repeat
+  //background-size: 100%
+  height: 350px
+  position: relative
+
+  #landscape
+    height: 350px
+    position: relative
+    //position: absolute
+    //top: 0px
+    overflow: hidden
+    img.landscape
+      width: 100%
+
+  .shim
+    position: absolute
+    bottom: 0px
+    width: 100%
+    margin: 0 auto
+  .container
+    //+susy-grid-background
+    position: relative
+    bottom: -3em
+    //bottom: 2em
+    z-index: 100
+    .caption
+      +columns(10,16)
+      +omega(16)
+      +pad(1,1,16)
+      .caption-content
+        font-size: 125%
+        color: #e9e9e9
+        +translucent(black, 0.55)
+        +border-radius(0.5em)
+        padding: 1em 0.5em 1em 1.5em
+
+#cross-slide
+  width: 100%
+  height: 400px
 //#directions-map
 //  margin-right: 400px
 //  height: 100%

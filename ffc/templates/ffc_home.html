@@ -35,32 +35,63 @@
     </div>
 </div>
 {#<img id="landscape" src="{{ STATIC_URL }}images/ffc-landscape-render-fade.jpg"/>#}
-<div id="landscape"></div>
-<div id="footer">
+<div id="splash">
+    <div id="landscape">
+{#        <img src="{{ STATIC_URL }}images/DSC00166-2.jpg" class="landscape" />#}
+{#        <img src="{{ STATIC_URL }}images/DSC00212-2.jpg" class="landscape" />#}
+{#        <img src="{{ STATIC_URL }}images/DSC00235-2.jpg" class="landscape" />#}
+    </div>
+    <div class="shim">
     <div class="container">
-        <div id="location">
-            <p id="address">1709 Country Club Road<br />Fairmont, WV 26554<br />(304) 366-2321</p>
-            <span id="map-button" class="button">Show Map</span>
-{#            <span id="directions-button" class="button">Get Directions</span>#}
-            <span id="clear-landscape-button" class="button">Hide Map</span>
+        <div class="caption">
+            <div class="caption-content">
+                <p>Members enjoy the privileges of a private country club
+                   that is at once exclusive and inclusive. The Fairmont Field Club has served
+                   as a "home away from home" for generations of Marion County residents. </p>
+{#                <p>With Amenities, Events, and Activities for members of all ages…</p>#}
+{#                <p>The Field Club will be the place where your family makes memories for years to come...</p>#}
+{##}
+{#                <p>Founded in 1912, The Field Club has been a Marion County institution for 100 years. Built by the#}
+{#                   Coal Barons of yesterday as a retreat from the industrial age, the Club has#}
+{#                   evolved into a family centered country club with opportunities for everyone!#}
+{#                   Surrounded by Country Club Estates…</p>#}
+{##}
+{#                <p>The Field Club’s location is seconds away from everything… yet set apart from it all…</p>#}
+            </div>
         </div>
-        <div id="control">
-{#            <p id="directions-preshow">Get directions</p>#}
-            <form action="http://maps.google.com/maps" method="get" target="_blank" id="directions-form">
-                <label for="start">Get directions from: </label>
-                <input type="text" id="start" name="saddr" />
-                <input type="hidden" name="daddr" value="1709 Country Club Road, Fairmont, WV" />
-                <input type="submit" value="Go" id="directions-submit" />
-            </form>
-        </div>
-{#        {% get_recent_entries 1 "zinnia/tags/recent_entries_excerpts.html" %}#}
-{#        {% get_recent_entries 1 "zinnia/entry_list.html" %}#}
+    </div>
     </div>
 </div>
-</body>
+
+<div id="cross-slide"></div>
+
+{#<div id="footer">#}
+{#    <div class="container">#}
+{#        <div id="location">#}
+{#            <p id="address">1709 Country Club Road<br />Fairmont, WV 26554<br />(304) 366-2321</p>#}
+{#            <span id="map-button" class="button">Show Map</span>#}
+{#            <span id="directions-button" class="button">Get Directions</span>#}
+{#            <span id="clear-landscape-button" class="button">Hide Map</span>#}
+{#        </div>#}
+{#        <div id="control">#}
+{#            <p id="directions-preshow">Get directions</p>#}
+{#            <form action="http://maps.google.com/maps" method="get" target="_blank" id="directions-form">#}
+{#                <label for="start">Get directions from: </label>#}
+{#                <input type="text" id="start" name="saddr" />#}
+{#                <input type="hidden" name="daddr" value="1709 Country Club Road, Fairmont, WV" />#}
+{#                <input type="submit" value="Go" id="directions-submit" />#}
+{#            </form>#}
+{#        </div>#}
+{#        {% get_recent_entries 1 "zinnia/tags/recent_entries_excerpts.html" %}#}
+{#        {% get_recent_entries 1 "zinnia/entry_list.html" %}#}
+{#    </div>#}
+{#</div>#}
+{#</body>#}
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cycle.lite.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cross-slide.min.js"></script>
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -74,7 +105,7 @@ $(document).ready(function() {
 //        if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
 //            map_canvas.css({width: '100%', height: '100%'});
 //        }
-        var empty = $(map_canvas).is(':empty');
+        var empty = true; //$(map_canvas).is(':empty');
 
         if (empty) {
             var clubCenter = new google.maps.LatLng(39.47539110, -80.18655790);
@@ -110,6 +141,80 @@ $(document).ready(function() {
         $(this).hide();
         $('#clear-landscape-button').show();
     });
+
+
+
+    function before_callback(el) {
+//        $(el).animate({'bottom': '-7px'}, 4000);
+//        $(el).removeClass('zoom');
+    }
+
+    function after_callback(el) {
+//        $(el).css('bottom', '0px');
+//        $(el).addClass('zoom');
+    }
+
+    $('.caption-content p').last().css('margin', '0px');
+//    $('#landscape').cycle({
+////                              before: before_callback,
+////                              after: after_callback
+//                          });
+
+    $(function() {
+//        $('#cross-slide').crossSlide({
+        $('#landscape').crossSlide({
+//                                       sleep: 2,
+                                       fade: 1
+                                   }, [
+            {
+                src: '{{ STATIC_URL }}images/DSC00166-2.jpg',
+                from: '100% 80% 0.7x',
+                to:   '70% 30% 0.8x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00181.jpg',
+                from: '0% 0% 0.5x',
+                to:   '100% 0% 0.4x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00178.jpg',
+                from: '0% 0% 0.5x',
+                to:   '100% 0% 0.4x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00161-2.jpg',
+                from: '80% 60% 0.8x',
+                to:   '100% 100% 0.7x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00212-2.jpg',
+                from: '50% 80% 0.8x',
+                to:   '100% 0% 0.7x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00157.jpg',
+                from: '0% 0% 0.5x',
+                to:   '100% 0% 0.4x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00235-2.jpg',
+                from: '80% 100% 0.7x',
+                to:   '20% 40% 0.8x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00274-2.jpg',
+                from: '100% 100% 0.7x',
+                to:   '0% 35% 0.8x',
+                time: 8
+            }, {
+                src: '{{ STATIC_URL }}images/DSC00246-2.jpg',
+                from: '100% 0% 0.8x',
+                to:   '0% 100% 0.7x',
+                time: 8
+            }
+        ])
+    });
+//    $('.caption-content').cycle();
 
 {#    $('#directions-button').click(function() {#}
 {#        var map_canvas = $("#landscape");#}

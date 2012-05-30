@@ -37,7 +37,7 @@ urlpatterns = patterns('',
 
 if settings.DEBUG:
 	urlpatterns += patterns('staticfiles.views',
-		url(r'^site_media/static/(?P<path>.*)$', 'serve'),
+		url(r'^site_media/static/(?P<path>.*)$', 'serve'), # this is done automatically
 		url(r'^site_media/media/(?P<path>.*)$', 'serve', {
 			'document_root': settings.MEDIA_ROOT,
 		}),
