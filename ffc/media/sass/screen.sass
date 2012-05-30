@@ -20,7 +20,7 @@ $default-text-shadow-blur: 1px
 
 body
   border-top: $logo_green 10px solid
-  min-width: 850px
+  //min-width: 850px
 
 .container
   +container
@@ -119,16 +119,22 @@ a
     bottom: -3em
     //bottom: 2em
     z-index: 100
-    .caption
+    #caption
       +columns(10,16)
       +omega(16)
       +pad(1,1,16)
       .caption-content
+        display: none // altered immediately by js
         font-size: 125%
         color: #e9e9e9
         +translucent(black, 0.55)
         +border-radius(0.5em)
         padding: 1em 0.5em 1em 1.5em
+      p
+        margin: 0
+        display: none
+        &#content
+          display: inline-block
 
 #cross-slide
   width: 100%
