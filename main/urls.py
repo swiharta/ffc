@@ -1,10 +1,8 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import include, url
 
-from django.contrib import admin
-from main.views import GoogleMapView, SplashView
-from django.views.generic.simple import direct_to_template, redirect_to
-
-#urlpatterns = patterns('',
+# from .views import GoogleMapView, SplashView
+#
+# urlpatterns = [
 #  url(r'^map/', GoogleMapView.as_view(), name="map"),
 #  url(r'^splash/', SplashView.as_view(), name="splash"),
-#                      )
+# ]

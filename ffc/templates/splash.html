@@ -183,12 +183,12 @@
 //                }
 //            });
             $("#splash").on('pjax:end', function(a, b, c) {
-                if (a.relatedTarget.pathname == '{% url home %}') {
+                if (a.relatedTarget.pathname == '{% url "home" %}') {
                     load_slideshow();
-                    $('#map-button').text('Get Directions').attr('href', '{% url map %}');
-                } else if (a.relatedTarget.pathname == '{% url map %}') {
+                    $('#map-button').text('Get Directions').attr('href', '{% url "map" %}');
+                } else if (a.relatedTarget.pathname == '{% url "map" %}') {
                     load_google_map();
-                    $('#map-button').text('Go Back').attr('href', '{% url home %}');
+                    $('#map-button').text('Go Back').attr('href', '{% url "home" %}');
                 }
 //                load_slideshow();
                 //$('#loading').hide() });

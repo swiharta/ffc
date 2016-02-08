@@ -1,4 +1,5 @@
-{% load zinnia_tags%}
+{% load staticfiles %}
+{% load compress %}
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,10 +16,10 @@
 <div class="container">
     <div id="header">
         <div id="logo">
-            <a href="{% url home %}">
+            <a href="{% url 'home' %}">
                 <img id="logo-img" src="{{ STATIC_URL }}images/FFC-logo-small.gif"/>
             </a>
-            <h1 id="ffc-title"><a href="{% url home %}">The Fairmont Field Club</a></h1>
+            <h1 id="ffc-title"><a href="{% url 'home' %}">The Fairmont Field Club</a></h1>
 
         </div>
         <div id="nav">
@@ -44,7 +45,7 @@
     <div class="container">
         <div id="location">
             <p id="address">1709 Country Club Road<br />Fairmont, WV 26554<br />(304) 366-2321</p>
-            <a href="{% url map %}" id="map-button" class="button">Get Directions</a>
+            <a href="{% url 'map' %}" id="map-button" class="button">Get Directions</a>
         </div>
         {#        {% get_recent_entries 1 "zinnia/tags/recent_entries_excerpts.html" %}#}
         {#        {% get_recent_entries 1 "zinnia/entry_list.html" %}#}
