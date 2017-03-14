@@ -1,2 +1,14 @@
-django-imagekit
-django-extensions
+Django==1.9.2
+django-appconf==1.0.1
+django-compressor==2.0
+django-debug-toolbar==1.4
+django-extensions==1.6.1
+django-imagekit==3.3
+django-tables2==1.1.1
+pilkit==1.1.13
+pillow==3.1.1
+psycopg2==2.6.1
+rcssmin==1.0.6
+rjsmin==1.0.12
+six==1.10.0
+sqlparse==0.1.18

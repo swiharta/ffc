@@ -12,9 +12,11 @@ $default-text-shadow-blur: 1px
 
 @mixin sassy-button-default-structure
   display: inline-block
-  width: auto
-  height: auto
+  //width: auto
+  //height: auto
   cursor: pointer
+  line-height: 1.5
+//$sb-line-height: 4em
 
 // Layout ------------------------------------------------------------------
 
@@ -24,6 +26,7 @@ body
 
 .container
   +container
+  //width: 100%
   //+susy-grid-background
 
 p, label
@@ -43,12 +46,13 @@ a.button:hover
 
 #header
   //+full()
-  //+span-columns(16 omega,16)
+  //width: columns(16 omega,16)
   width: 100%
   padding-bottom: 20px
 
   #logo
-    +span-columns(6,16)
+    width: columns(6,16)
+    float: left
     text-align: center
 
     a
@@ -68,7 +72,8 @@ a.button:hover
       letter-spacing: -1px
 
   #nav
-    +span-columns(10 omega,16)
+    width: columns(10,16)
+    +omega
     text-align: right
 
     ul#nav-menu
@@ -121,7 +126,8 @@ a.button:hover
     //bottom: 2em
     z-index: 100
     #caption
-      +span-columns(10 omega,16)
+      width: columns(10,16)
+      +omega
       +pad(1,1,16)
       .caption-content
         display: none // altered immediately by js
@@ -180,6 +186,5 @@ a.button:hover
     text-align: center
     //color: $light_font
     color: $font
-    padding: 10px
+    padding: 3em 0 0
     margin: 0
-    padding-top: 3em
