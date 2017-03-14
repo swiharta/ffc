@@ -42,12 +42,13 @@ a.button:hover
   +sassy-button("matte", 1em, 100%, $grey)
 
 #header
-  +full()
-  +alpha
+  //+full()
+  //+span-columns(16 omega,16)
+  width: 100%
   padding-bottom: 20px
 
   #logo
-    +columns(6,16)
+    +span-columns(6,16)
     text-align: center
 
     a
@@ -67,8 +68,7 @@ a.button:hover
       letter-spacing: -1px
 
   #nav
-    +columns(10,16)
-    +omega(16)
+    +span-columns(10 omega,16)
     text-align: right
 
     ul#nav-menu
@@ -121,8 +121,7 @@ a.button:hover
     //bottom: 2em
     z-index: 100
     #caption
-      +columns(10,16)
-      +omega(16)
+      +span-columns(10 omega,16)
       +pad(1,1,16)
       .caption-content
         display: none // altered immediately by js
@@ -176,8 +175,8 @@ a.button:hover
   //height: 50px
 
   #location
-    +full()
-    +alpha
+    //+full()
+    width: 100%
     text-align: center
     //color: $light_font
     color: $font

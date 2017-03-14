@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from crossslide.models import CrossSlideImage
+from cross_slide.models import CrossSlideImage
 
 class CrossSlideImageAdmin(admin.ModelAdmin):
     model = CrossSlideImage

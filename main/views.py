@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-# from crossslide.models import CrossSlideImage
+# from cross_slide.models import CrossSlideImage
 
 class GoogleMapView(TemplateView):
   template_name = "google-map.html"
